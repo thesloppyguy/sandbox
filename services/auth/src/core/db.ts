@@ -1,5 +1,5 @@
 import { env } from "../config/env";
-import { PrismaClient } from "../generated/prisma/client";
+import { PrismaClient } from "@/prisma/client";
 import { PrismaPg } from '@prisma/adapter-pg';
 import { Pool } from 'pg';
 
@@ -7,10 +7,10 @@ const createPrismaClient = () => {
 
   const pool = new Pool({ connectionString: env.DATABASE_URL });
   const adapter = new PrismaPg(pool);
-  
-  return new PrismaClient({ 
-    adapter, 
-    log: env.NODE_ENV === "development" ? ["query", "error", "warn"] : ["error"] 
+
+  return new PrismaClient({
+    adapter,
+    log: env.NODE_ENV === "development" ? ["query", "error", "warn"] : ["error"]
   });
 };
 

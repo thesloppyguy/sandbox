@@ -11,6 +11,9 @@ const envSchema = z.object({
     UPDATE_AGE: z.number().default(60 * 60 * 24),
     FRESH_AGE: z.number().default(60 * 60 * 24),
     MAX_AGE: z.number().default(5 * 60),
+    GOOGLE_RECAPTCHA_SECRET_KEY: z.string().min(32),
+    MANAGER_EMAIL: z.string().email(),
+    MANAGER_PASSWORD: z.string().min(8),
 });
 
 export const env = envSchema.parse(process.env);

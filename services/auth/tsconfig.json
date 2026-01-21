@@ -23,6 +23,33 @@
 		"verbatimModuleSyntax": true,
 		"isolatedModules": true,
 		"moduleDetection": "force",
-		"skipLibCheck": true
+		"skipLibCheck": true,
+		"baseUrl": ".",
+		"paths": {
+			"@/*": [
+				"./src/*"
+			],
+			"@/prisma/*": [
+				"./src/generated/prisma/*"
+			],
+			"@/config/*": [
+				"./src/config/*"
+			],
+			"@/core/*": [
+				"./src/core/*"
+			],
+			"@/hooks/*": [
+				"./src/hooks/*"
+			],
+			"@/lib/*": [
+				"./src/lib/*"
+			],
+			"@/utils/*": [
+				"./src/utils/*"
+			],
+			"@/types/*": [
+				"./src/types/*"
+			],
+		}
 	}
 }
